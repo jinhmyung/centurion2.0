@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import Card from './Card';
+import Card from './(tabs)/Card';
 import './index.css'; // Import the CSS file
-import Yearcard from './Yearcard';
+import Yearcard from './(tabs)/Yearcard';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('GE');
