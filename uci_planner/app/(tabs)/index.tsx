@@ -1,17 +1,42 @@
-import React from 'react';
-import { Image, StyleSheet, Platform } from 'react-native';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import React, { useState } from 'react';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import Card from './Card';
+import './index.css'; // Import the CSS file
 
 export default function App() {
+  const [activeSection, setActiveSection] = useState('GE');
+
   return (
     <DndProvider backend={HTML5Backend}>
-      <div>
-        <h4>UCI Planner</h4>
+      <div className="container">
+        <div className="main-content">
+          <h1>UCInformaticsPlanner</h1>
           <Card text="Sample Card Text" />
+        </div>
+        <div className="sidebar">
+          <div className="buttons">
+            <button
+              className={activeSection === 'GE' ? 'active' : ''}
+              onClick={() => setActiveSection('GE')}
+            >
+              GE
+            </button>
+            <button
+              className={activeSection === 'Major' ? 'active' : ''}
+              onClick={() => setActiveSection('Major')}
+            >
+              Major
+            </button>
+          </div>
+          <div className="section-content">
+            {activeSection === 'GE' ? (
+              <div>General Education Content</div>
+            ) : (
+              <div>Major Content</div>
+            )}
+          </div>
+        </div>
       </div>
     </DndProvider>
   );
