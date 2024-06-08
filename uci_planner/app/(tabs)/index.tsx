@@ -3,6 +3,7 @@ import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import Card from './Card';
 import './index.css'; // Import the CSS file
+import Yearcard from './Yearcard';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('GE');
@@ -13,6 +14,7 @@ export default function App() {
         <div className="main-content">
           <h1>UCInformaticsPlanner</h1>
           <Card text="Sample Card Text" />
+          <Yearcard/>
         </div>
         <div className="sidebar">
           <div className="buttons">

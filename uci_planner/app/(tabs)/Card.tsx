@@ -25,15 +25,15 @@ const Card: React.FC<CardProps> = ({ text }) => {
 
   const cardStyle: CSSProperties = {
     border: '1px solid #ccc',
-    padding: '16px',
-    margin: '8px',
-    borderRadius: '4px',
+    padding: '8px', // Decreased padding
+    margin: '4px',  // Decreased margin
+    borderRadius: '12px', // Increased border radius for more rounded edges
     backgroundColor: '#fff',
     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
     cursor: 'move',
     textAlign: 'center' as const, // TypeScript specific value for textAlign
     fontFamily: 'Arial, sans-serif',
-    fontSize: '14px',
+    fontSize: '12px', // Decreased font size
     opacity
   };
 
