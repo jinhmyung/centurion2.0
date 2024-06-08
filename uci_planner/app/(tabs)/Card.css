@@ -1,0 +1,23 @@
+/* Card.css */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 12px; /* Increased border radius for more rounded edges */
+    overflow: hidden;
+    transition: all 0.3s ease;
+    width: 120px; /* Fixed width */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px; /* Add margin to separate cards */
+    padding: 8px; /* Decreased padding */
+    background-color: #fff;
+    cursor: move;
+    text-align: center; /* Center text */
+    font-family: Arial, sans-serif;
+    font-size: 12px; /* Decreased font size */
+    opacity: 1; /* Default opacity */
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+  }
+  
+  .card.dragging {
+    opacity: 0.5; /* Opacity when dragging */
+  }
+  

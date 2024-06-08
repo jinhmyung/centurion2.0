@@ -1,57 +1,44 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .card {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    width: 100%; /* Make the card full width */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 100%; /* Ensure it doesn't exceed the container width */
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(240, 240, 240);
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .arrow {
-    font-size: 18px;
-    margin-right: 10px;
-  }
-  
-  .title {
-    font-size: 16px;
-  }
-  
-  .content {
-    display: flex;
-    justify-content: space-around;
-    padding: 0 10px;
-    background-color: #fff;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-    max-height: 0;
-    overflow: hidden;
-  }
-  
-  
-  
-  .content.hidden {
-    max-height: 0;
-    padding: 0 10px;
-  }
-  
-  .card.expanded .content {
-    max-height: 500px; /* Increased height when expanded */
-  }
-  
+/* Yearcard.css */
+.yearcard {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: auto; /* Fixed width for yearcard */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px; /* Add margin to separate cards */
+  background-color: #fff;
+}
+
+.yearcard .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(240, 240, 240);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.yearcard .arrow {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.yearcard .title {
+  font-size: 16px;
+}
+
+.yearcard .content {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 10px;
+  background-color: #fff;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.yearcard.expanded .content {
+  max-height: 200px; /* Adjust this based on the content height */
+  padding: 10px;
+}
