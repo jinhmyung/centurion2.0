@@ -25,11 +25,6 @@ export default function App() {
       setInputYear('')
     }
   }
-  const [activeButton, setActiveButton] = useState(null);
-
-  const handleHeaderButtonClick = (buttonName) => {
-    setActiveButton(buttonName);
-  };
 
   return (
     <DndProvider backend={HTML5Backend}>
