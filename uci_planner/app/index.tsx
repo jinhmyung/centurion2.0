@@ -7,14 +7,40 @@ import Yearcard from './(tabs)/Yearcard';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('GE');
+  const [activeButton, setActiveButton] = useState(null);
+
+  const handleHeaderButtonClick = (buttonName) => {
+    setActiveButton(buttonName);
+  };
 
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="container">
         <div className="main-content">
-          <h1>UCInformaticsPlanner</h1>
-          <Card text="Sample Card Text" />
-          <Yearcard/>
+          <header className="main-header">
+            <h1>UCInformaticsPlannerssss</h1>
+            <div className="header-buttons">
+              <button
+                className={activeButton === 'eraser' ? 'active' : ''}
+                onClick={() => handleHeaderButtonClick('eraser')}
+              >
+                <img src="assets\images\eraser.png" alt="Eraser" />
+              </button>
+              <button
+                className={activeButton === 'pen' ? 'active' : ''}
+                onClick={() => handleHeaderButtonClick('pen')}
+              >
+                <img src="assets\images\pen-nib.svg" alt="Pen" />
+              </button>
+              <button
+                className={activeButton === 'pencil' ? 'active' : ''}
+                onClick={() => handleHeaderButtonClick('pencil')}
+              >
+                <img src="assets/images/pencil.svg" alt="Pencil" />
+              </button>
+            </div>
+          </header>
+          <Yearcard />
         </div>
         <div className="sidebar">
           <div className="buttons">
@@ -33,12 +59,13 @@ export default function App() {
           </div>
           <div className="section-content">
             {activeSection === 'GE' ? (
-              <div>General Education Content
+              <div>
+                General Education Content
                 <Card text="Sample Card Text" />
               </div>
-              
             ) : (
-              <div>Major Content
+              <div>
+                Major Content
                 <Card text="Sample Card Text" />
               </div>
             )}
