@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Yearcard.css'; // Import the CSS file
 
-const Yearcard = () => {
+const Yearcard = ({ year } : any) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleExpand = () => {
@@ -14,7 +14,7 @@ const Yearcard = () => {
         <span className="arrow">
           {isExpanded ? '▼' : '▶'}
         </span>
-        <span className="title">2020 - 2021</span>
+        <span className="title">{ parseInt(year) } - { parseInt(year)+1 }</span>
       </div>
       {isExpanded && (
         <div className="content">

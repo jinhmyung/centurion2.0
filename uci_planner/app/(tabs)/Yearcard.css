@@ -6,7 +6,7 @@
   transition: all 0.3s ease;
   width: auto; /* Fixed width for yearcard */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 10px; /* Add margin to separate cards */
+  margin: 10px 0px 10px 0px; /* Add margin to separate cards */
   background-color: #fff;
 }
 
