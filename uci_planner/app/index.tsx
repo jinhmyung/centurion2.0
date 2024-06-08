@@ -30,31 +30,7 @@ export default function App() {
     <DndProvider backend={HTML5Backend}>
       <div className="container">
         <div className="main-content">
-          <h1>UCInformaticsPlanner</h1>
-          <Card text="Sample Card Text" />
-          
-          <div style={{display: "flex", flexDirection: "row", justifyContent: 'flex-end'}}>
-            <div>
-              <input
-                type="number"
-                value={inputYear}
-                onChange={(e) => setInputYear(e.target.value)}
-                placeholder="Enter year"
-                style={{height: 33}}
-              />
-              <button 
-                style={{margin: 0, marginLeft: 10}}
-                onClick={() => {addYear(inputYear)}}
-              >
-                Add A New Year
-              </button>
-            </div>
-          </div>
-
-          {/* Showing All the Year card that stored in list */}
-          {/* I think this is a dangrous way to implement, but let's make it as our first step */}
-          {yearList.map((yearcard : any) => (yearcard))}
-
+      
           <header className="main-header">
             <h1>UCInformaticsPlannerssss</h1>
             <div className="header-buttons">
@@ -78,7 +54,29 @@ export default function App() {
               </button>
             </div>
           </header>
-          <Yearcard />
+          
+          <div style={{display: "flex", flexDirection: "row", justifyContent: 'flex-end', marginTop: 10}}>
+            <div>
+              <input
+                type="number"
+                value={inputYear}
+                onChange={(e) => setInputYear(e.target.value)}
+                placeholder="Enter year"
+                style={{height: 33}}
+              />
+              <button 
+                style={{margin: 0, marginLeft: 10}}
+                onClick={() => {addYear(inputYear)}}
+              >
+                Add A New Year
+              </button>
+            </div>
+          </div>
+
+          {/* Showing All the Year card that stored in list */}
+          {/* I think this is a dangrous way to implement, but let's make it as our first step */}
+          {yearList.map((yearcard : any) => (yearcard))}
+
         </div>
         <div className="sidebar">
           <div className="buttons">
