@@ -1,10 +1,19 @@
-.card {
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .card {
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow: hidden;
     transition: all 0.3s ease;
-    width: 300px;
+    width: 100%; /* Make the card full width */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* Ensure it doesn't exceed the container width */
   }
   
   .header {
@@ -28,12 +37,21 @@
   .content {
     display: flex;
     justify-content: space-around;
-    padding: 10px;
+    padding: 0 10px;
     background-color: #fff;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
   }
   
-  .expanded {
-    height: auto;
-    padding-bottom: 10px;
+  
+  
+  .content.hidden {
+    max-height: 0;
+    padding: 0 10px;
+  }
+  
+  .card.expanded .content {
+    max-height: 500px; /* Increased height when expanded */
   }
   
