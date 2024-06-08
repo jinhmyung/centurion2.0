@@ -103,8 +103,63 @@ export default function App() {
               </div>
               
             ) : (
-              <div>Major Content
-                <Card text="Sample Card Text" />
+              <div>
+                <h3>Major Content</h3>
+                <h4>Lower Division A(2)</h4>
+                <div className="cards-row">
+                  <Card text="ICS 32A" />
+                  <Card text="ICS 33" />
+                </div>
+                <h4>Lower Division B (4)</h4>
+                <div className="cards-row">
+                  <Card text="ICS 45J" />
+                  <Card text="INF 43" />
+                  <Card text="ICS 6B" />
+                </div>
+                <div>
+                  <Card text="STATS 7" />
+                </div>
+                <h4>Upper Division Core (7)</h4>
+                {/* <button>Pick Courses</button> */}
+                <div className="cards-row">
+                  <Card text="INF 113" />
+                  <Card text="INF 121" />
+                  <Card text="INF 131" />
+                </div>
+                <div className="cards-row">
+                  <Card text="INF 151" />
+                  <Card text="INF 161" />
+                  <Card text="INF 191A" />
+                </div>
+                <Card text="INF 191B" />
+                <h4>Health Informatics Core</h4>
+                {/* <button>Pick Courses</button> */}
+                <div className="cards-row">
+                  <Card text="INF 171" />
+                  <Card text="INF 172" />
+                  <Card text="INF 173" />
+                </div>
+                <h4>Health Informatics Elective</h4>
+                {/* <button>Pick Courses</button> */}
+                <div className="cards-row">
+                  <Card text="INF 132" />
+                  <Card text="INF 133" />
+                  <Card text="INF 134" />
+                </div>
+                <Card text="CS 122A" />
+                <h4>Public Health Core</h4>
+                {/* <button>Pick Courses</button> */}
+                <div className="cards-row">
+                  <Card text="PUBHLTH 1" />
+                  <Card text="PUBHLTH 2" />
+                </div>
+                <h4>Final Elective</h4>
+                {/* <button>Pick Courses</button> */}
+                <div className="cards-row">
+                  <Card text="PUBHLTH 101" />
+                </div>
+                <p> </p>
+                <p> </p>
               </div>
             )}
           </div>
