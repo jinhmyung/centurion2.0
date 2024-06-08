@@ -31,9 +31,14 @@ export default function App() {
           </div>
           <div className="section-content">
             {activeSection === 'GE' ? (
-              <div>General Education Content</div>
+              <div>General Education Content
+                <Card text="Sample Card Text" />
+              </div>
+              
             ) : (
-              <div>Major Content</div>
+              <div>Major Content
+                <Card text="Sample Card Text" />
+              </div>
             )}
           </div>
         </div>
