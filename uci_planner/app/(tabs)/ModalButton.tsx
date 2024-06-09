@@ -1,30 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "./Card";
 
 interface ModalProps {
-    options: string[];
-    cont: string;
-  }
+  options: string[];
+  cont: string;
+  cards: string[];
+  setCards: React.Dispatch<React.SetStateAction<string[]>>;
+}
 
-function ModalButton({options,cont}:ModalProps) {
-  const [modalVisible, setModalVisible] = useState(false);
-  const [cards, setCards] = useState<string[]>([]);
-  
-  let modalSize = "modal";
-
+const ModalButton: React.FC<ModalProps> = ({ options, cont, cards, setCards }) => {
   const toggleOptions = () => {
-    setModalVisible(!modalVisible);
+    setModalVisible((prev) => !prev);
   };
 
   const handleAddCard = (text: string) => {
     if (!cards.includes(text)) {
-        setCards([...cards, text]);
+      setCards((prevCards) => [...prevCards, text]);
     } else {
-        alert("Already added.");
+      alert("Already added.");
     }
   };
 
-  if (cont != "options-container") {
+  const [modalVisible, setModalVisible] = React.useState(false);
+
+  let modalSize = "modal";
+
+  if (cont !== "options-container") {
     modalSize = "modal-small";
   }
 
@@ -45,12 +46,12 @@ function ModalButton({options,cont}:ModalProps) {
         </div>
       )}
       <div className="cards-row">
-        {cards.map((card) => (
-          <Card text={card} />
+        {cards.map((card, index) => (
+          <Card key={index} text={card} />
         ))}
       </div>
     </div>
   );
-}
+};
 
 export default ModalButton;
