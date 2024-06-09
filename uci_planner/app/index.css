@@ -126,14 +126,15 @@ button.active {
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
-  align-items: center;
   overflow-y: auto;
   padding-top: 20px;
 }
 
 .modal-content {
   background-color: white;
+  height: fit-content;
   padding: 20px;
+  margin-bottom: 50px;
   border-radius: 5px;
   display: grid;
 }
