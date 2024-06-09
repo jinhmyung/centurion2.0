@@ -105,6 +105,62 @@ button.active {
 
 .cards-row {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 800px;
   gap: 10px; /* Add spacing between cards */
 }
 
+.options-container {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr); /* Adjust the number of columns as needed */
+  gap: 10px; /* Adjust the gap between items */
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  padding-top: 20px;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  display: grid;
+}
+
+.option-item {
+  background-color: #f0f0f0; /* Add background color to distinguish items */
+  padding: 10px;
+  border-radius: 3px;
+  width: 100%;
+  cursor: pointer;
+  border: none; /* Remove default border */
+  outline: none; /* Remove outline on focus */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+  font-family: inherit; /* Inherit font */
+  grid-column: span 1; /* Ensure each item spans 1 column */
+}
+
+.option-item:hover {
+  background-color: #e0e0e0; /* Change background color on hover */
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.modalbutton {
+  padding: 10px;
+}
