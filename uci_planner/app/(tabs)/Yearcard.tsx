@@ -18,9 +18,13 @@ const Yearcard = ({ year } : any) => {
   });
 
   const handleDrop = (season : any, item : any) => {
-    let t = [...droppedItems[season]]; 
-    t.push(item.text); 
-    setDroppedItems({...droppedItems, [season]: t});
+    if (!droppedItems[season].includes(item.text)) {
+      let t = [...droppedItems[season]]; 
+      t.push(item.text); 
+      setDroppedItems({...droppedItems, [season]: t});
+    } else {
+      alert("Already added.");
+    }
   };
 
   const handleRemoveItem = (index : any) => {
