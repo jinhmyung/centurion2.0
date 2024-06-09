@@ -3,11 +3,14 @@ import Card from "./Card";
 
 interface ModalProps {
     options: string[];
+    cont: string;
   }
 
-function ModalButton({options}:ModalProps) {
+function ModalButton({options,cont}:ModalProps) {
   const [modalVisible, setModalVisible] = useState(false);
   const [cards, setCards] = useState<string[]>([]);
+  
+  let modalSize = "modal";
 
   const toggleOptions = () => {
     setModalVisible(!modalVisible);
@@ -21,13 +24,17 @@ function ModalButton({options}:ModalProps) {
     }
   };
 
+  if (cont != "options-container") {
+    modalSize = "modal-small";
+  }
+
   return (
     <div>
       <button onClick={toggleOptions}>Show Options</button>
       {modalVisible && (
-        <div className="modal" onClick={toggleOptions}>
+        <div className={modalSize} onClick={toggleOptions}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="options-container">
+            <div className={cont}>
               {options.map((option, index) => (
                 <button key={index} className="option-item" onClick={() => handleAddCard(option)}>
                   {option}
