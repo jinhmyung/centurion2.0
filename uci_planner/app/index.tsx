@@ -99,7 +99,8 @@ export default function App() {
           {/* Showing All the Year card that stored in list */}
           {/* I think this is a dangrous way to implement, but let's make it as our first step */}
           {yearList.map((yearcard : any) => (yearcard))}
-
+          <p> </p>
+          <div className='hidden-spacer'><p>_</p></div>
         </div>
         <div className="sidebar">
           <div className="buttons">
@@ -148,10 +149,8 @@ export default function App() {
                 <ModalButton cards={cardsGE7} setCards={setCardsGE7} cont='options-container' options={optionsGE7}></ModalButton>
                 <h4>VIII. International/Global Issues (1)</h4>
                 <ModalButton cards={cardsGE8} setCards={setCardsGE8} cont='options-container' options={optionsGE8}></ModalButton>
-                <p>.</p>
                 <p> </p>
-                <p> </p>
-                <p> </p>
+                <p>_</p>
               </div>
             ) : (
               <div>
@@ -191,7 +190,7 @@ export default function App() {
                 <h4>Upper Division Electives (4)</h4>
                 <ModalButton cards={cardsMajorElective} setCards={setCardsMajorElective} cont='options-container-4' options={optionsMajorElective}></ModalButton>
                 <p> </p>
-                <p>. </p>
+                <p>_ </p>
               </div>
             )}
           </div>
