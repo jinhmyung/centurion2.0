@@ -53,7 +53,6 @@ export default function App() {
     <DndProvider backend={HTML5Backend}>
       <div className="container">
         <div className="main-content">
-      
           <header className="main-header">
             <h1>UCI Software Engineering Academic Planner</h1>
             <div className="header-buttons">
@@ -102,6 +101,7 @@ export default function App() {
           <p> </p>
           <div className='hidden-spacer'><p>_</p></div>
         </div>
+
         <div className="sidebar">
           <div className="buttons">
             <button
@@ -117,8 +117,9 @@ export default function App() {
               Major
             </button>
           </div>
+
           <div className="section-content">
-            {activeSection === 'GE' ? (
+          {activeSection === 'GE' ? (
               <div>
                 <h3>General Education Content</h3>
                 <h4>Ia. Lower Division Writing (2)</h4>

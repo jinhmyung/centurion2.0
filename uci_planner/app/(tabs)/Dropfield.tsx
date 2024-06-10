@@ -11,11 +11,6 @@ const Dropfield = ({ onDrop, items } : any) => {
 
   const [{ isOver }, drop] = useDrop(() => ({
       accept: ItemTypes.CARD,
-      // drop: (item) => {
-      //   let t = droppedItems; 
-      //   t.push(onDrop(item)); 
-      //   setDroppedItems(t);
-      // },
       drop: (item) => onDrop(item),
       collect: (monitor) => ({
           isOver: monitor.isOver(),
@@ -38,7 +33,7 @@ const Dropfield = ({ onDrop, items } : any) => {
     >
       {items.map((item : any) => (
         <div key={Math.random()}>
-          <Card text={item}/>
+          <Card text={item.text}/>
         </div>
       ))}
     </div>

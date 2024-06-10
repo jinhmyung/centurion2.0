@@ -5,7 +5,6 @@ import Card from './Card';
 
 const Yearcard = ({ year } : any) => {
   const [isExpanded, setIsExpanded] = useState(false);
-
   const toggleExpand = () => {
     setIsExpanded(!isExpanded);
   };
@@ -18,20 +17,26 @@ const Yearcard = ({ year } : any) => {
   });
 
   const handleDrop = (season : any, item : any) => {
-    if (!droppedItems[season].includes(item.text)) {
+
+    // Check we dont plan the same course for same year
+    let allcourse : any = [];
+    ['fall', 'winter', 'spring', 'summer'].map((season:any) => {
+      allcourse += (droppedItems[season].map((item:any) => item.text))
+    })
+
+    if (!allcourse.includes(item.text)) {
       let t = [...droppedItems[season]]; 
-      t.push(item.text); 
+      t.push({text: item.text, season: season, year: parseInt(year)}); 
       setDroppedItems({...droppedItems, [season]: t});
     } else {
       alert("Already added.");
     }
   };
 
-  const handleRemoveItem = (index : any) => {
-      const updatedItems = [...droppedItems];
-      updatedItems.splice(index, 1);
-      setDroppedItems(updatedItems);
-  };
+  // Just simply clear planned courses for corresponding season
+  const clearSeason = (season : any) => {
+    setDroppedItems({...droppedItems, [season]: []})
+  }
 
   return (
     <div className={`yearcard ${isExpanded ? 'expanded' : ''}`}>
@@ -49,10 +54,15 @@ const Yearcard = ({ year } : any) => {
               style={{ alignItems: 'center', display: 'flex', flexDirection: 'column' }}
             >
               <span style={{ textAlign: 'center' }}>{season.charAt(0).toUpperCase() + season.slice(1)}</span>
+              
+              {/* Drop Field (to add courses here) */}
               <Dropfield
                 items={droppedItems[season]}
                 onDrop={(item:any) => handleDrop(season, item)}
               />
+              
+              {/* Clear Button */}
+              <button className='clearButton' onClick={()=>clearSeason(season)}>Clear All</button>
             </div>
           ))}
         </div>
