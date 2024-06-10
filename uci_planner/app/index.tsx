@@ -160,7 +160,7 @@ export default function App() {
                 <h4>Complete Lower Division Core</h4>
                 <div className="cards-row">
                   <Card text='I&C SCI 45C'/>
-                  <Card text="I&C SCI 45J" />
+                  <Card text="I&C SCI 45J"/>
                   <Card text="I&C SCI 46" />
                   <Card text="I&C SCI 51" />
                   <Card text="IN4MATX 43" />

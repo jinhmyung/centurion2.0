@@ -17,6 +17,10 @@
     box-sizing: border-box; /* Ensures padding and border are included in the width */
   }
   
-  .card.dragging {
+.card.dragging {
     opacity: 0.5; /* Opacity when dragging */
-  }  
+  }
+
+.card.pencil {
+    border: 1px dashed #ccc;
+}

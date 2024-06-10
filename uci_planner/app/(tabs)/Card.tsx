@@ -5,6 +5,7 @@ import './Card.css'; // Import the CSS file
 
 interface CardProps {
   text: string;
+  isPencil?: boolean; // Add isPencil prop
 }
 
 /**
@@ -12,7 +13,7 @@ interface CardProps {
  * This component represents a draggable card with text content.
  * The card's opacity changes when it is being dragged.
  */
-const Card: React.FC<CardProps> = ({ text }) => {
+const Card: React.FC<CardProps> = ({ text, isPencil }) => {
   const [{ isDragging }, dragRef] = useDrag(
     () => ({
       type: ItemTypes.CARD,
@@ -25,7 +26,10 @@ const Card: React.FC<CardProps> = ({ text }) => {
   );
 
   return (
-    <div ref={dragRef} className={`card ${isDragging ? 'dragging' : ''}`}>
+    <div
+      ref={dragRef}
+      className={`card ${isDragging ? 'dragging' : ''} ${isPencil ? 'pencil' : ''}`}
+    >
       {text}
     </div>
   );
