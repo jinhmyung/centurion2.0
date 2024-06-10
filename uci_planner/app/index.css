@@ -25,6 +25,8 @@ h1 {
 .main-content {
   flex: 2;
   padding: 20px;
+  height: 100vh;
+  overflow-y: scroll;
 }
 
 .sidebar {
@@ -189,5 +191,11 @@ button.active {
 .options-container-4{
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns as needed */
+  gap: 10px; /* Adjust the gap between items */
+}
+
+.options-container-6{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Adjust the number of columns as needed */
   gap: 10px; /* Adjust the gap between items */
 }
