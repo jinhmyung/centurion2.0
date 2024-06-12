@@ -6,11 +6,14 @@ import './index.css'; // Import the CSS file
 import Yearcard from './(tabs)/Yearcard';
 import ModalButton from './(tabs)/ModalButton';
 
+export var currentMode = null;
+
 export default function App() {
   const [activeSection, setActiveSection] = useState('GE');
   const [activeButton, setActiveButton] = useState(null);
 
   const handleHeaderButtonClick = (buttonName : any) => {
+    currentMode = buttonName;
     setActiveButton(buttonName);
   };
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Yearcard.css'; // Import the CSS file
 import Dropfield from './Dropfield';
 import Card from './Card';
+import { currentMode } from '../index';
 
 const Yearcard = ({ year } : any) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -26,7 +27,7 @@ const Yearcard = ({ year } : any) => {
 
     if (!allcourse.includes(item.text)) {
       let t = [...droppedItems[season]]; 
-      t.push({text: item.text, season: season, year: parseInt(year)}); 
+      t.push({text: item.text, isPencil: currentMode}); 
       setDroppedItems({...droppedItems, [season]: t});
     } else {
       alert("Already added.");

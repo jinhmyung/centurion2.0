@@ -22,5 +22,8 @@
   }
 
 .card.pencil {
-    border: 1px dashed #ccc;
+    border: 1.5px dashed #aaa;
+}
+.card.pen {
+  border: 1.5px solid #000;
 }

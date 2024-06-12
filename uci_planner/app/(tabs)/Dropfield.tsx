@@ -28,12 +28,12 @@ const Dropfield = ({ onDrop, items } : any) => {
         height: "100%",
         alignItems: "center", 
         display: "flex", 
-        flexDirection: "column"
+        flexDirection: "column",
       }}
     >
       {items.map((item : any) => (
         <div key={Math.random()}>
-          <Card text={item.text}/>
+          <Card text={item.text} mode={item.isPencil}/>
         </div>
       ))}
     </div>
