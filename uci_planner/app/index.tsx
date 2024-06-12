@@ -10,7 +10,7 @@ export var currentMode = null;
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('GE');
-  const [activeButton, setActiveButton] = useState(null);
+  const [activeButton, setActiveButton] = useState('pen');
 
   const handleHeaderButtonClick = (buttonName : any) => {
     currentMode = buttonName;
@@ -57,7 +57,7 @@ export default function App() {
       <div className="container">
         <div className="main-content">
           <header className="main-header">
-            <h1>UCI Software Engineering Academic Planner</h1>
+            <h1>Ant Planner for Software Engineering</h1>
             <div className="header-buttons">
               <button
                 className={activeButton === 'eraser' ? 'active' : ''}
